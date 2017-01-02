@@ -47,14 +47,27 @@ $r = JH_RealWords::real_words($t);
 if(false === $r){print "SPAM";}else{print "NOT SPAM";}
 
 
+print "\n";
 
+// TEST FOR SPAM ( ONE WORD )
+$t = "qXDBxjsPWGPV";
 
+$r = JH_RealWords::real_words($t);
+
+if(false === $r){print "SPAM";}else{print "NOT SPAM";}
 
 
 print "\n";
 
+// TEST FOR NOT SPAM ( ONE WORD )
+$t = "jeremy";
+
+$r = JH_RealWords::real_words($t);
+
+if(false === $r){print "SPAM";}else{print "NOT SPAM";}
 
 
+print "\n";
 
 
 

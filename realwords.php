@@ -9,16 +9,14 @@ class JH_RealWords
      * loops through words and makes a final judgement if the email is spam
      * @param string $i
      * */
-    public static function real_words($i) {
+    public static function real_words($i,$threshhold = 3) {
         
         // remove any HTML
         $i = strip_tags($i);
         
         if(false === JH_RealWords::pharma($i))return false;
         
-        // maximum words we will allow before we say that this email is likely spam
-        $threshhold = 3;
-        
+
         $score = 0;
         
         // put all the words into an array to loop through
@@ -27,6 +25,8 @@ class JH_RealWords
 
         $wc = count($ws);
         
+        // if we only have one word in the field, then we will need to be strict
+        if(1 == $wc)$threshhold = 0;
         
         // loop all the words
         foreach($ws as $w) {
