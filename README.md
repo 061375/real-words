@@ -7,4 +7,3 @@ Initially I added a simple session to throttle the emails down. And that was eff
 
 I knew about real word algorithms but only found classes. I didn't see any simple solutions...so I wrote one.
 
-It took about 5 minutes and it has thus far been effective.
