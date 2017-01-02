@@ -53,6 +53,11 @@ class JH_RealWords
         
         $finalverdict = 0;
         
+        $cap = 0;
+        
+        // checks if the word is all uppercase
+        $is_allcaps = ctype_upper($i);
+        
         // loop through all the letters in the word
         for($x=0; $x<strlen($i); $x++) {
             // get the letter at position x
@@ -64,6 +69,12 @@ class JH_RealWords
             // if we find a consonant...how many have we found in a row?
             if(strpos($consonants,strtolower($l)) !== false)$score++;
     
+            // there should only be one capital letter per word (unless the word is all caps)
+            if(false == $is_allcaps) {
+                if(ctype_upper($l))$cap++;
+                if($cap > 1)$score++;
+            }
+            
             if($score == 3)$overallscore+=5;
             if($score == 4)$overallscore+=15;
             if($score == 5)$overallscore+=30;
@@ -73,8 +84,8 @@ class JH_RealWords
         // based on the number of consectutive consonants in a row and the length of the word
         if(strlen($i) > 0)$finalverdict = $overallscore / strlen($i);
     
-        // a final verdict is rendered if more than 15% of the word is garbage
-        if($finalverdict > 15)return false;
+        // a final verdict is rendered if more than x% of the word is garbage
+        if($finalverdict > 11)return false;
         return true;
     }
     /**

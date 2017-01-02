@@ -50,7 +50,7 @@ if(false === $r){print "SPAM";}else{print "NOT SPAM";}
 print "\n";
 
 // TEST FOR SPAM ( ONE WORD )
-$t = "qXDBxjsPWGPV";
+$t = "TYieSXBojtYt";
 
 $r = JH_RealWords::real_words($t);
 
