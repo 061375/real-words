@@ -1,7 +1,7 @@
 <?php
 /**
  * Real Words Algorithm
- * @version 2.0.2
+ * @version 2.0.3
  * @author Jeremy Heminger c/o Geographics
  * */
 class JH_RealWords
@@ -87,6 +87,9 @@ class JH_RealWords
                 if(ctype_upper($l))$cap++;
                 if($cap > 1)$score++;
             }
+            
+            // filter non-ascii characters in response to foreign emails
+            if (preg_match('/[\x80-\xFF]/', $l))$score++;
             
             if($score == 3)$overallscore+=5;
             if($score == 4)$overallscore+=15;

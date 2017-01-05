@@ -9,6 +9,10 @@ I knew about real word algorithms but only found classes. I didn't see any simpl
 
 ## Version
 
+### 2.0.2 - Jan 4, 2016
+
+* Add feature to filter non-ascii characters in response to foreign emails
+
 ### 2.0.1 - Jan 3, 2016
 
 * Moved everything into a proper class
