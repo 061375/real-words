@@ -1,5 +1,5 @@
 # Real Words
-Simple algorithm to devine the legitimacy of a submitted email from a form
+Simple algorithm to determine the legitimacy of a submitted email from a form
 
 A customer was receiving a ton of emails with the typical garbage.
 
